@@ -38,7 +38,7 @@ public class TemperatureConverter extends javax.swing.JFrame {
         lbl3ConvertCelsius = new javax.swing.JLabel();
         btnConvert = new javax.swing.JButton();
         lbl4Result = new javax.swing.JLabel();
-        btnReset = new javax.swing.JButton();
+        btnQuit = new javax.swing.JButton();
         txt2output = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,7 +68,12 @@ public class TemperatureConverter extends javax.swing.JFrame {
 
         lbl4Result.setText("Result");
 
-        btnReset.setText("Reset");
+        btnQuit.setText("Quit");
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,7 +92,7 @@ public class TemperatureConverter extends javax.swing.JFrame {
                         .addComponent(lbl4Result)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnReset)
+                    .addComponent(btnQuit)
                     .addComponent(btnConvert)
                     .addComponent(rdoCelsius)
                     .addComponent(rdoFahrenheit)
@@ -118,7 +123,7 @@ public class TemperatureConverter extends javax.swing.JFrame {
                     .addComponent(lbl4Result)
                     .addComponent(txt2output, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnReset)
+                .addComponent(btnQuit)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -151,6 +156,11 @@ public class TemperatureConverter extends javax.swing.JFrame {
     private void rdoFahrenheitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoFahrenheitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rdoFahrenheitActionPerformed
+
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnQuitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,7 +202,7 @@ public class TemperatureConverter extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup ConvertTemperature;
     private javax.swing.JButton btnConvert;
-    private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnQuit;
     private javax.swing.JLabel lbl1Temperature;
     private javax.swing.JLabel lbl2ConvertFahrenheit;
     private javax.swing.JLabel lbl3ConvertCelsius;
