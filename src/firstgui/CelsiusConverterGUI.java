@@ -35,6 +35,7 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
         Convertbtn1 = new javax.swing.JButton();
         resultlbl2 = new javax.swing.JLabel();
         celsiuslbl1 = new javax.swing.JLabel();
+        btnQuit = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -64,6 +65,13 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
 
         celsiuslbl1.setText("Fahrenheit");
 
+        btnQuit.setText("Quit");
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,9 +83,10 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
                     .addComponent(Convertbtn1))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnQuit)
                     .addComponent(resultlbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(celsiuslbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(131, Short.MAX_VALUE))
+                    .addComponent(celsiuslbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,8 +98,10 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Convertbtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(resultlbl2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(165, Short.MAX_VALUE))
+                    .addComponent(resultlbl2))
+                .addGap(28, 28, 28)
+                .addComponent(btnQuit)
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         pack();
@@ -100,15 +111,21 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
         
          //Parse degrees Celsius as a double and convert to Fahrenheit.
          
-//    int tempFahr = (int)((Double.parseDouble(temptxt1.getText()))
-//            * 1.8 + 32);
-//   Fahrenheitbtn1.setText(tempFahr + " Fahrenheit");
+//    int tempFahr = (int)((Double.parseDouble(temptxt1.getText())) * 1.8 + 32);
+//           
+//   resultlbl2.setText(tempFahr + " Fahrenheit");
      int fahrenheitTemp, celsiusTemp;
-     String text = temptxt1.getText();
-     fahrenheitTemp = Integer.parseInt (text);
+     String text1 = temptxt1.getText();
+     fahrenheitTemp = Integer.parseInt (text1);
      celsiusTemp = (fahrenheitTemp-32) * 5/9;
      resultlbl2.setText (Integer.toString (celsiusTemp));
-
+     //txt2result.setText (Integer.toString (celsiusTemp));
+     
+     
+      String text2 = temptxt1.getText();
+     celsiusTemp = Integer.parseInt (text2);
+     fahrenheitTemp = (celsiusTemp * 5/9) +32;
+     resultlbl2.setText (Integer.toString (celsiusTemp));
  
 
     }//GEN-LAST:event_Convertbtn1ActionPerformed
@@ -116,6 +133,11 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
     private void temptxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temptxt1ActionPerformed
         
     }//GEN-LAST:event_temptxt1ActionPerformed
+
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnQuitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +177,7 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Convertbtn1;
+    private javax.swing.JButton btnQuit;
     private javax.swing.JLabel celsiuslbl1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
