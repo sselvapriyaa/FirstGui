@@ -3,23 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package firstgui;
+package pratice;
 
+//import firstgui.ChildWindow;
 /**
  *
  * @author Gladwin
  */
-public class ParentWindow extends javax.swing.JFrame {
-private ChildWindow childWindow;
+public class practice1 extends javax.swing.JFrame {
+
+    private pratice1a practice1a;
+    
 
     /**
-     * Creates new form ParentWindow
+     * Creates new form practice1
      */
-    public ParentWindow() {
-        initComponents();
-        childWindow = new ChildWindow();
+    public practice1() {
         
+        initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,74 +33,80 @@ private ChildWindow childWindow;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        txtinput = new javax.swing.JTextField();
+        btnclick = new javax.swing.JButton();
+        lblparent = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Parent Window");
-
-        jButton1.setText("Quit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        txtinput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                txtinputActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Open Child Window");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnclick.setText("Click");
+        btnclick.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnclickActionPerformed(evt);
             }
         });
+
+        lblparent.setText("Display");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblparent)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jLabel1))))
-                .addContainerGap(181, Short.MAX_VALUE))
+                        .addComponent(txtinput, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnclick)))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel1)
-                .addGap(44, 44, 44)
-                .addComponent(jButton1)
-                .addGap(43, 43, 43)
-                .addComponent(jButton2)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtinput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnclick))
+                .addGap(48, 48, 48)
+                .addComponent(lblparent)
+                .addContainerGap(157, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnclickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclickActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        practice1a = new pratice1a();
+        practice1a.setVisible(true);
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // take a number in the text box and multiple it by math.pi and display the answer in the display label
+        Double nameInput = ((Double.parseDouble(txtinput.getText())) * Math.PI);
+        String roundedAnswer = String.format("%.2f", nameInput);
+        practice1a.lblchild.setText(roundedAnswer);
+
+    }//GEN-LAST:event_btnclickActionPerformed
+
+    private void txtinputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtinputActionPerformed
         // TODO add your handling code here:
-        
-         childWindow.setVisible(true);
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_txtinputActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    public void setLblParent(String text) {
+        lblparent.setText(text);
+
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -112,27 +121,29 @@ private ChildWindow childWindow;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ParentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(practice1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ParentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(practice1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ParentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(practice1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ParentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(practice1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new ParentWindow().setVisible(true);
+                new practice1().setVisible(true);
             }
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnclick;
+    private javax.swing.JLabel lblparent;
+    private javax.swing.JTextField txtinput;
     // End of variables declaration//GEN-END:variables
 }

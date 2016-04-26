@@ -20,7 +20,7 @@ public class FirstGui {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new DisplayMessage().setVisible(true);
             }
         });
     }

@@ -137,15 +137,15 @@ public class TemperatureConverter extends javax.swing.JFrame {
 
          Double tempFahrenheit = ((Double.parseDouble(txt1input.getText())) * 1.8 + 32);
          Double tempCelsius = (((Double.parseDouble(txt1input.getText()) -32) * 0.55));
-//           
-//   resultlbl2.setText(tempFahr + " Fahrenheit");
-     DecimalFormat format = new DecimalFormat("0.00");//sets up the 2 Decimal places for use on the output
-     
+         String roundedAnswer1 = String.format("%.2f",tempFahrenheit);
+         String roundedAnswer2 = String.format("%.2f",tempCelsius);
+                 
          if (rdoFahrenheit.isSelected()) {
-            
-            txt2output.setText(tempFahrenheit + " F");
+            txt2output.setText(roundedAnswer1 +" F");
+            //txt2output.setText(tempFahrenheit + " F");
          }else {
-              txt2output.setText(tempCelsius + " C");
+              txt2output.setText(roundedAnswer2 +" C");
+              //txt2output.setText(tempCelsius + " C");
             
             
         // TODO Auto-generated method stuif (hellordo1.isSelected()) {

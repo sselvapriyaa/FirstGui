@@ -11,12 +11,12 @@ import static java.time.Clock.system;
  *
  * @author Gladwin
  */
-public class NewJFrame extends javax.swing.JFrame {
+public class DisplayMessage extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame() {
+    public DisplayMessage() {
         initComponents();
     }
 

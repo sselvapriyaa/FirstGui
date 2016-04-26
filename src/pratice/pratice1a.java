@@ -3,22 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package firstgui;
-
+package pratice;
+import pratice.practice1;
 /**
  *
  * @author Gladwin
  */
-public class ParentWindow extends javax.swing.JFrame {
-private ChildWindow childWindow;
-
+public class pratice1a extends javax.swing.JFrame {
+private practice1 practice;
     /**
-     * Creates new form ParentWindow
+     * Creates new form pratice1a
      */
-    public ParentWindow() {
+    public pratice1a() {
         initComponents();
-        childWindow = new ChildWindow();
-        
+         practice= new practice1();
     }
 
     /**
@@ -30,27 +28,31 @@ private ChildWindow childWindow;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        DisplayGroup = new javax.swing.ButtonGroup();
+        lblchild = new javax.swing.JLabel();
+        btnchild = new javax.swing.JButton();
+        rdocorrect = new javax.swing.JRadioButton();
+        rdoincorrect = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Parent Window");
+        lblchild.setText("Result");
 
-        jButton1.setText("Quit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnchild.setText("Hide Me");
+        btnchild.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnchildActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Open Child Window");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        rdocorrect.setText("Correct");
+        rdocorrect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                rdocorrectActionPerformed(evt);
             }
         });
+
+        rdoincorrect.setText("Incorrect");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,41 +61,51 @@ private ChildWindow childWindow;
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jButton1))
+                        .addGap(167, 167, 167)
+                        .addComponent(lblchild))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
+                        .addGap(147, 147, 147)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jLabel1))))
-                .addContainerGap(181, Short.MAX_VALUE))
+                            .addComponent(rdocorrect)
+                            .addComponent(btnchild)
+                            .addComponent(rdoincorrect))))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel1)
-                .addGap(44, 44, 44)
-                .addComponent(jButton1)
-                .addGap(43, 43, 43)
-                .addComponent(jButton2)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(lblchild)
+                .addGap(33, 33, 33)
+                .addComponent(btnchild)
+                .addGap(18, 18, 18)
+                .addComponent(rdocorrect)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rdoincorrect)
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnchildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchildActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        practice.setVisible(true);
+         //this.setVisible(false);
+               
+        if (rdocorrect.isSelected()) {
+            practice.setLblParent("Correct");
+        
+        } else {
+           practice.setLblParent("InCorrect");
+        }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         
+    }//GEN-LAST:event_btnchildActionPerformed
+
+    private void rdocorrectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdocorrectActionPerformed
         // TODO add your handling code here:
-        
-         childWindow.setVisible(true);
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_rdocorrectActionPerformed
 
     /**
      * @param args the command line arguments
@@ -112,27 +124,29 @@ private ChildWindow childWindow;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ParentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pratice1a.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ParentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pratice1a.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ParentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pratice1a.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ParentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pratice1a.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ParentWindow().setVisible(true);
+                new pratice1a().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.ButtonGroup DisplayGroup;
+    private javax.swing.JButton btnchild;
+    public javax.swing.JLabel lblchild;
+    private javax.swing.JRadioButton rdocorrect;
+    private javax.swing.JRadioButton rdoincorrect;
     // End of variables declaration//GEN-END:variables
 }
