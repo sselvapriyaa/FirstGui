@@ -135,8 +135,8 @@ public class TemperatureConverter extends javax.swing.JFrame {
 //         int tempFahrenheit = (int)((Double.parseDouble(txt1input.getText())) * 1.8 + 32);
 //         int tempCelsius = (int)(((Double.parseDouble(txt1input.getText()) -32) * 0.55));
 
-         Double tempFahrenheit = ((Double.parseDouble(txt1input.getText())) * 1.8 + 32);
-         Double tempCelsius = (((Double.parseDouble(txt1input.getText()) -32) * 0.55));
+         double tempFahrenheit = ((Double.parseDouble(txt1input.getText())) * 1.8 + 32);
+         double tempCelsius = (((Double.parseDouble(txt1input.getText()) -32) * 0.55));
          String roundedAnswer1 = String.format("%.2f",tempFahrenheit);
          String roundedAnswer2 = String.format("%.2f",tempCelsius);
                  
